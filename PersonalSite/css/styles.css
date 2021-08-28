@@ -1,0 +1,95 @@
+body {
+    margin: 0px;
+    text-align: center;
+    background-color: #EDF6E5;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1em;
+}
+
+h1 {
+    width: 40%;
+    margin: 50px auto auto;
+    font-size: 3rem;
+    color: #66BFBF;
+}
+
+h2 {
+    margin:40px auto;
+    font-size: 1.5rem;
+    color: #66BFBF;
+    font-weight: normal;
+}
+
+h3 {
+    color: #66BFBF;
+}
+
+hr {
+    margin: 100px auto;
+    border-top: 8px dotted lightpink;
+    width: 5%;
+}
+
+
+.top-container {
+    padding-top: 100px;
+}
+
+.bottom-cloud {
+    position: absolute;
+}
+
+.top-cloud {
+    position: absolute;
+    right: 400px;
+    top: 50px;
+}
+
+.skill-row {
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.code-img {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+.chillies-img {
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+}
+
+.profile-pic {
+    width: 15%;
+    padding-top: 50px;
+}
+
+.btn {
+    background-color: #66BFBF;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.bottom-container {
+    background-color: #66BFBF;
+    margin-top: 100px;
+    padding: 30px 0px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: darkcyan;
+    padding: 20px;
+}
+
+.copy-right {
+    color: #EAF6F6;
+}
+
