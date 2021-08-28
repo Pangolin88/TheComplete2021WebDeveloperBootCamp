@@ -1,7 +1,6 @@
 body {
     margin: 0px;
     text-align: center;
-    background-color: #EDF6E5;
     font-family: Roboto, Arial, sans-serif;
     font-size: 1em;
 }
@@ -32,6 +31,7 @@ hr {
 
 
 .top-container {
+    background-color: #EDF6E5;
     padding-top: 100px;
 }
 
@@ -89,7 +89,24 @@ hr {
     padding: 20px;
 }
 
-.copy-right {
-    color: #EAF6F6;
+.footer-link:hover {
+    color: cyan;
 }
 
+.copy-right {
+    color: #EAF6F6;
+    font-size: 0.75rem;
+}
+
+.middle-container {
+    background-color: white;
+}
+
+.introduce {
+    width: 30%;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 2;
+}
