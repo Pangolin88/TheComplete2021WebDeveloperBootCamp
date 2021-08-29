@@ -9,6 +9,13 @@ h1 {
     font-weight: 900;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
 i {
     padding-right: 5px;
 }
@@ -19,7 +26,7 @@ i {
 }
 
 .container-fluid {
-    padding: 3% 15%;
+    padding: 3% 15% 7% 15%;
 }
 
 /*Navigation Bar*/
@@ -52,6 +59,8 @@ i {
 .title-img {
     transform: rotate(25deg);
     width: 60%;
+    position: absolute;
+    
 }
 
 /*Features Section*/
@@ -62,7 +71,9 @@ h3 {
 }
 
 #features {
-    padding: 7% 15%;
+    padding: 10% 15%;
+    background-color: white;
+    position: relative;
 }
 
 .feature-box {
@@ -78,4 +89,52 @@ h3 {
 
 .icon:hover {
     color: #FF4C68;
+}
+
+/*Testimonials Section*/
+#testimonials {
+    text-align: center;
+    background-color: #EF8172;
+    color: white;
+}
+
+.carousel-item {
+    padding: 7% 15%;
+}
+
+.testimonials-img {
+    width: 10%;
+    border-radius: 100%;
+}
+
+/*Press Section*/
+#press {
+    background-color: #EF8172;
+    text-align: center;
+}
+
+.logo {
+    width: 15%;
+    margin: 3rem;
+}
+
+/*Pricing Section*/
+#pricing {
+    text-align: center;
+    padding: 100px;
+}
+
+.pricing-col {
+    padding: 3% 2%;
+}
+
+@media (max-width: 1100px) {
+    .title-img {
+        position: static;
+        transform: none;
+    }
+
+    #title {
+        text-align: center;
+    }
 }
