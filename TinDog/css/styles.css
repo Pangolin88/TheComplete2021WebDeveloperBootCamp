@@ -1,28 +1,40 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    font-weight: bold;
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    line-height: 1.5;
-    font-weight: 900;
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    font-weight: 900;
-    line-height: 1.5;
 }
 
-i {
-    padding-right: 5px;
+h3 {
+    font-size: 1.5rem;
 }
 
-#title {
+/*Section*/
+
+.colored-section {
     background-color: #FF4C68;
     color: white;
+}
+
+.white-section {
+    background-color: white;
+}
+
+/*Title Section*/
+
+#title {
+    text-align: left;
 }
 
 .container-fluid {
@@ -37,7 +49,7 @@ i {
 }
 
 .navbar {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
 }
 
 .nav-item {
@@ -45,7 +57,6 @@ i {
 }
 
 .nav-link {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
 }
 
@@ -55,21 +66,30 @@ i {
     margin: 5% 1%;
 }
 
+i {
+    padding-right: 10px;
+}
+
 /*Title image*/
 .title-img {
     transform: rotate(25deg);
     width: 60%;
     position: absolute;
-    
 }
+
+@media (max-width: 1100px) {
+    .title-img {
+        position: static;
+        transform: none;
+    }
+
+    #title {
+        text-align: center;
+    }
+}
+
 
 /*Features Section*/
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
 #features {
     padding: 10% 15%;
     background-color: white;
@@ -77,7 +97,6 @@ h3 {
 }
 
 .feature-box {
-    text-align: center;
     padding: 0px 2rem;
 }
 
@@ -91,9 +110,9 @@ h3 {
     color: #FF4C68;
 }
 
+
 /*Testimonials Section*/
 #testimonials {
-    text-align: center;
     background-color: #EF8172;
     color: white;
 }
@@ -107,10 +126,10 @@ h3 {
     border-radius: 100%;
 }
 
+
 /*Press Section*/
 #press {
     background-color: #EF8172;
-    text-align: center;
 }
 
 .logo {
@@ -118,23 +137,35 @@ h3 {
     margin: 3rem;
 }
 
+
 /*Pricing Section*/
 #pricing {
-    text-align: center;
-    padding: 100px;
+    padding: 7% 15%;
 }
 
 .pricing-col {
     padding: 3% 2%;
 }
 
-@media (max-width: 1100px) {
-    .title-img {
-        position: static;
-        transform: none;
-    }
 
-    #title {
-        text-align: center;
-    }
+/*Call to action*/
+#cta {
+    padding: 6rem 20rem;
+
 }
+
+/*Footer*/
+#footer {
+    padding: 4rem;
+}
+
+.footer-icon {
+    margin: 10px;
+}
+
+
+
+
+
+
+
