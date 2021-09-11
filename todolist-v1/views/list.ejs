@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>To Do List</title>
+</head>
+
+<body>
+    <% if (kindOfDay === 'Sunday' || kindOfDay === 'Saturday') { %>
+        <h1 style="color: orange"><%= kindOfDay %> Todo List</h1>
+    <% } else { %>
+        <h1 style="color: darkblue"><%= kindOfDay %> Todo List</h1>
+    <% } %>
+</body>
+
+</html>
