@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <title>To Do List</title>
-</head>
-
+<%- include('header') -%>
 <body>
-    <% if (kindOfDay === 'Sunday' || kindOfDay === 'Saturday') { %>
-        <h1 style="color: orange"><%= kindOfDay %> Todo List</h1>
-    <% } else { %>
-        <h1 style="color: darkblue"><%= kindOfDay %> Todo List</h1>
-    <% } %>
+    <div class="box" id="heading">
+        <h1><%= title %></h1>
+    </div>
+    <div class="box">
+        <% for (var i = 0; i < items.length; i++) { %>
+            <div class="item">
+                <input type="checkbox"/>
+                <p><%= items[i]%></p>
+            </div>
+        <% } %>
+        <form class="item" action="/" method="post">
+             <input type="text" name="newItem" placeholder="New item" autocomplete="off"/>
+             <button type="submit" name="list" value=<%= title %>>+</button>
+        </form>
+    </div>
 </body>
-
-</html>
+<%- include('footer') -%>
