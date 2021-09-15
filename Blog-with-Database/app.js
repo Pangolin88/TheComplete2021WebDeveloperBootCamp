@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect('mongodb+srv://nemo-admin:zaVFXHe1CkFGXkg8@cluster0.7qy3g.mongodb.net/blogPost?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://nemo-admin:passwork@cluster0.7qy3g.mongodb.net/blogPost?retryWrites=true&w=majority')
 
 const postSchema = new mongoose.Schema({
   title: String,
