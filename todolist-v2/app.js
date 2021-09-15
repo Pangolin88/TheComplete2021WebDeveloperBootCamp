@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://nemo-admin:zaVFXHe1CkFGXkg8@cluster0.7qy3g.mongodb.net/todoList?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://nemo-admin:password@cluster0.7qy3g.mongodb.net/todoList?retryWrites=true&w=majority')
 
 const itemsSchema = new mongoose.Schema({
   name: {
@@ -104,6 +104,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
