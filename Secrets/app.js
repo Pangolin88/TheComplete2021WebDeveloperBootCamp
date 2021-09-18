@@ -4,14 +4,14 @@ const express = require('express')
 const ejs = require('ejs')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const encrypt = require('mongoose-encryption')
+const md5 = require('md5')
 
 const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb+srv://nemo-admin' + process.env.MONGO_PASSWORD + ':@cluster0.7qy3g.mongodb.net/userDB?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://nemo-admin:' + process.env.MONGO_PASSWORD + '@cluster0.7qy3g.mongodb.net/userDB?retryWrites=true&w=majority')
 
 const userSchema = new mongoose.Schema ({
     email: {
@@ -23,8 +23,6 @@ const userSchema = new mongoose.Schema ({
         required: String
     }
 })
-
-userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ['password']})
 
 const User = mongoose.model('User', userSchema)
 
@@ -43,7 +41,7 @@ app.get('/register', function(req, res){
 app.post('/register', function(req, res){
     const newUser = new User ({
         email: req.body.username,
-        password: req.body.password
+        password: md5(req.body.password)
     })
 
     newUser.save(function(err){
@@ -57,7 +55,7 @@ app.post('/register', function(req, res){
 
 app.post('/login', function(req, res){
     const username = req.body.username
-    const password = req.body.password
+    const password = md5(req.body.password)
 
     User.findOne({email: username}, function(err, foundUser){
         if (err){
