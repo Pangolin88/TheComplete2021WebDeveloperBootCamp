@@ -1,4 +1,5 @@
 //jshint esversion:6
+require('dotenv').config()
 const express = require('express')
 const ejs = require('ejs')
 const mongoose = require('mongoose')
@@ -10,7 +11,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb+srv://nemo-admin:ISx77XB3X5VjdKLB@cluster0.7qy3g.mongodb.net/userDB?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://nemo-admin' + process.env.MONGO_PASSWORD + ':@cluster0.7qy3g.mongodb.net/userDB?retryWrites=true&w=majority')
 
 const userSchema = new mongoose.Schema ({
     email: {
@@ -23,8 +24,7 @@ const userSchema = new mongoose.Schema ({
     }
 })
 
-const secret = 'ThisIsOurLittleSecret.'
-userSchema.plugin(encrypt, {secret: secret, encryptedFields: ['password']})
+userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ['password']})
 
 const User = mongoose.model('User', userSchema)
 
@@ -64,7 +64,6 @@ app.post('/login', function(req, res){
             console.log(err)
         }else{
             if(foundUser){
-                console.log('foundUser:', foundUser)
                 if (foundUser.password === password){
                     res.render('secrets')
                 }
